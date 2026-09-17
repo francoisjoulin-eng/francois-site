@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francois Joulin | Industrial Executive Advisor</title>
+    
+    <!-- Google Fonts: Inter for clean, modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'us-blue': '#0A3161',
+                        'fr-blue': '#002395',
+                        'accent-red': '#ED2939',
+                        'light-bg': '#F8FAFC',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom styles for specific elements not easily handled by Tailwind utilities alone */
+        .placeholder-block {
+            background-image: repeating-linear-gradient(
+                45deg,
+                #fffbe8,
+                #fffbe8 10px,
+                #fef08a 10px,
+                #fef08a 20px
+            );
+        }
+        
+        /* Language Toggle Switch Animation */
+        .lang-switch {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-slate-800 font-sans antialiased text-lg">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md border-b-4 border-us-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-extrabold text-us-blue tracking-tighter hover:text-accent-red transition-colors">
+                        FRANCOIS <span class="text-accent-red">JOULIN</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="lang-switch text-slate-600 hover:text-us-blue font-semibold transition" data-en="Home" data-fr="Accueil">Home</a>
+                    <a href="#advisory" class="lang-switch text-slate-600 hover:text-us-blue font-semibold transition" data-en="Advisory" data-fr="Conseil">Advisory</a>
+                    <a href="#experience" class="lang-switch text-slate-600 hover:text-us-blue font-semibold transition" data-en="Experience" data-fr="Expérience">Experience</a>
+                    <a href="#investor" class="lang-switch text-slate-600 hover:text-us-blue font-semibold transition" data-en="Investor" data-fr="Investisseur">Investor</a>
+                    <a href="#contact" class="lang-switch text-slate-600 hover:text-us-blue font-semibold transition" data-en="Contact" data-fr="Contact">Contact</a>
+                    
+                    <!-- Language Toggle -->
+                    <button id="langToggle" class="flex items-center justify-center w-12 h-10 bg-slate-100 rounded-lg hover:bg-slate-200 border border-slate-300 transition-colors font-bold text-us-blue shadow-sm">
+                        EN
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="langToggleMob" class="flex items-center justify-center w-10 h-10 bg-slate-100 rounded-lg font-bold text-us-blue border border-slate-300">
+                        EN
+                    </button>
+                    <button id="mobileMenuBtn" class="text-slate-600 hover:text-us-blue focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-200 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="lang-switch block px-3 py-2 text-base font-medium text-slate-700 hover:text-us-blue hover:bg-slate-50 rounded-md" data-en="Home" data-fr="Accueil">Home</a>
+                <a href="#advisory" class="lang-switch block px-3 py-2 text-base font-medium text-slate-700 hover:text-us-blue hover:bg-slate-50 rounded-md" data-en="Advisory" data-fr="Conseil">Advisory</a>
+                <a href="#experience" class="lang-switch block px-3 py-2 text-base font-medium text-slate-700 hover:text-us-blue hover:bg-slate-50 rounded-md" data-en="Experience" data-fr="Expérience">Experience</a>
+                <a href="#investor" class="lang-switch block px-3 py-2 text-base font-medium text-slate-700 hover:text-us-blue hover:bg-slate-50 rounded-md" data-en="Investor" data-fr="Investisseur">Investor</a>
+                <a href="#contact" class="lang-switch block px-3 py-2 text-base font-medium text-slate-700 hover:text-us-blue hover:bg-slate-50 rounded-md" data-en="Contact" data-fr="Contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 bg-gradient-to-b from-slate-100 to-white relative overflow-hidden">
+        <!-- Abstract decorative shapes -->
+        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-accent-red rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-fr-blue rounded-full mix-blend-multiply filter blur-[100px] opacity-20"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h2 class="lang-switch text-accent-red font-bold tracking-widest uppercase mb-4 text-sm md:text-base" 
+                data-en="Based in San Diego, California, USA" 
+                data-fr="Basé à San Diego, Californie, USA">
+                Based in San Diego, California, USA
+            </h2>
+            <h1 class="lang-switch text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight"
+                data-en="CROSSING THE ATLANTIC<br/><span class='text-us-blue'>IS NOT SO SIMPLE</span>"
+                data-fr="TRAVERSER L'ATLANTIQUE<br/><span class='text-us-blue'>N'EST PAS SI SIMPLE</span>">
+                CROSSING THE ATLANTIC<br/><span class="text-us-blue">IS NOT SO SIMPLE</span>
+            </h1>
+            <p class="lang-switch text-2xl md:text-3xl font-light text-slate-600 mb-8"
+                data-en="Transatlantic Industrial Leadership"
+                data-fr="Leadership Industriel Transatlantique">
+                Transatlantic Industrial Leadership
+            </p>
+            <div class="bg-white/80 backdrop-blur shadow-xl rounded-2xl p-8 max-w-4xl mx-auto mb-10 border-l-8 border-us-blue">
+                <p class="lang-switch text-xl leading-relaxed text-slate-700 text-left"
+                    data-en="Graduated as a wood/mechanical engineer (Master) in 1994, I dedicated over 30 years to directing and scaling <strong>Joulin</strong>, a family-owned industrial manufacturing firm specializing in advanced vacuum handling systems and custom robotics vacuum grippers. After managing French operations, I relocated to the US in 2007 to establish and manage the North American manufacturing facility."
+                    data-fr="Diplômé ingénieur bois/mécanique (Master) en 1994, j'ai consacré plus de 30 ans à diriger et développer <strong>Joulin</strong>, une entreprise industrielle familiale spécialisée dans les systèmes de préhension par le vide et la robotique sur mesure. Après avoir géré les opérations françaises, j'ai déménagé aux États-Unis en 2007 pour établir et gérer l'usine de production nord-américaine.">
+                    Graduated as a wood/mechanical engineer (Master) in 1994, I dedicated over 30 years to directing and scaling <strong>Joulin</strong>, a family-owned industrial manufacturing firm specializing in advanced vacuum handling systems and custom robotics vacuum grippers. After managing French operations, I relocated to the US in 2007 to establish and manage the North American manufacturing facility.
+                </p>
+            </div>
+            
+            <a href="FJ_Doc_2026_Updated_v3.pdf" download class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-accent-red hover:bg-red-700 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <i class="fas fa-file-pdf mr-3 text-2xl"></i>
+                <span class="lang-switch" data-en="Download PDF brochure" data-fr="Télécharger la brochure PDF">
+                    Download PDF brochure
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Advisory Section -->
+    <section id="advisory" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="lang-switch text-4xl md:text-5xl font-extrabold text-us-blue mb-4"
+                    data-en="Advisory & Expansion Support"
+                    data-fr="Conseil & Aide à l'Expansion">
+                    Advisory & Expansion Support
+                </h2>
+                <div class="w-24 h-1 bg-accent-red mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Fields of Competence -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="lang-switch text-3xl font-bold text-slate-800 mb-6 flex items-center"
+                        data-en="<i class='fas fa-cogs text-accent-red mr-4'></i> Fields of Competence"
+                        data-fr="<i class='fas fa-cogs text-accent-red mr-4'></i> Domaines de Compétence">
+                        <i class="fas fa-cogs text-accent-red mr-4"></i> Fields of Competence
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Vacuum handling & gripper engineering" data-fr="Ingénierie de la manipulation par le vide et préhenseurs">Vacuum handling & gripper engineering</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Mechanical & electrical engineering" data-fr="Ingénierie mécanique et électrique">Mechanical & electrical engineering</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Running SMEs in France & the US" data-fr="Gestion de PME en France et aux États-Unis">Running SMEs in France & the US</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Worldwide technical export" data-fr="Exportation technique mondiale">Worldwide technical export</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Robotics & automation" data-fr="Robotique et automatisation">Robotics & automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Technical B2B, niche industrial markets" data-fr="B2B technique, marchés industriels de niche">Technical B2B, niche industrial markets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-us-blue mt-1 mr-3 text-xl"></i>
+                            <span class="lang-switch" data-en="Wood industry" data-fr="Industrie du bois">Wood industry</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Transatlantic Differences -->
+                <div class="bg-us-blue text-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="lang-switch text-3xl font-bold mb-6 flex items-center"
+                        data-en="<i class='fas fa-globe-americas text-accent-red mr-4'></i> Transatlantic Differences"
+                        data-fr="<i class='fas fa-globe-americas text-accent-red mr-4'></i> Différences Transatlantiques">
+                        <i class="fas fa-globe-americas text-accent-red mr-4"></i> Transatlantic Differences
+                    </h3>
+                    <p class="lang-switch text-slate-200 mb-6" data-en="Few quick examples of differences from experience in the industrial sector:" data-fr="Quelques exemples rapides de différences tirées de mon expérience dans le secteur industriel :">
+                        Few quick examples of differences from experience in the industrial sector:
+                    </p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="lang-switch font-bold text-xl text-yellow-400" data-en="Price Negotiation & Levels" data-fr="Négociation et Niveaux de Prix">Price Negotiation & Levels</h4>
+                            <p class="lang-switch text-slate-300" data-en="Rarely a price negotiation in the US compared to Europe/Asia. However, prices for industrial supplies are often 30-50% higher in the US due to distributor networks." data-fr="Rarement de négociation de prix aux États-Unis par rapport à l'Europe/Asie. Cependant, les prix des fournitures industrielles sont souvent 30 à 50 % plus élevés aux États-Unis en raison de réseaux de distributeurs.">Rarely a price negotiation in the US compared to Europe/Asia. However, prices for industrial supplies are often 30-50% higher in the US due to distributor networks.</p>
+                        </div>
+                        <div>
+                            <h4 class="lang-switch font-bold text-xl text-yellow-400" data-en="Engineering & Design" data-fr="Ingénierie et Conception">Engineering & Design</h4>
+                            <p class="lang-switch text-slate-300" data-en="Designs differ due to culture, usage, and available raw materials (metric vs. imperial). Subcontractors can be more expensive in the US, requiring more in-house adaptation." data-fr="Les conceptions diffèrent en raison de la culture, de l'utilisation et des matières premières (métrique vs. impérial). Les sous-traitants peuvent être plus chers aux États-Unis, nécessitant plus d'adaptation en interne.">Designs differ due to culture, usage, and available raw materials (metric vs. imperial). Subcontractors can be more expensive in the US, requiring more in-house adaptation.</p>
+                        </div>
+                        <div>
+                            <h4 class="lang-switch font-bold text-xl text-yellow-400" data-en="Market Speed & Support" data-fr="Vitesse du Marché et Support">Market Speed & Support</h4>
+                            <p class="lang-switch text-slate-300" data-en="Decisions are faster in the larger US market. Expectations for customer service are high; customers are supportive but demand strong backing for products." data-fr="Les décisions sont plus rapides sur le vaste marché américain. Les attentes en matière de service client sont élevées ; les clients sont solidaires mais exigent un soutien solide pour les produits.">Decisions are faster in the larger US market. Expectations for customer service are high; customers are supportive but demand strong backing for products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="lang-switch text-4xl md:text-5xl font-extrabold text-us-blue mb-4"
+                    data-en="Experiences & Advices"
+                    data-fr="Expériences & Conseils">
+                    Experiences & Advices
+                </h2>
+                <div class="w-24 h-1 bg-accent-red mx-auto"></div>
+                <p class="lang-switch mt-6 text-xl text-slate-600 max-w-3xl mx-auto"
+                   data-en="Having stepped back, I now mentor pro bono for early conversations. The purpose is to save founders the time it took me to learn."
+                   data-fr="Ayant pris du recul, je propose désormais du mentorat bénévole pour les premières discussions. Le but est de faire gagner aux fondateurs le temps qu'il m'a fallu pour apprendre.">
+                   Having stepped back, I now mentor pro bono for early conversations. The purpose is to save founders the time it took me to learn.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-us-blue hover:shadow-lg transition">
+                    <i class="fas fa-hard-hat text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Shop-Floor Reality" data-fr="Réalité du Terrain">Shop-Floor Reality</h3>
+                    <p class="lang-switch text-slate-600" data-en="Insight comes from working directly alongside teams. To truly understand a job, spend time with the people doing it. Listening is learning, doing is understanding." data-fr="La vision vient du travail direct aux côtés des équipes. Pour vraiment comprendre un travail, passez du temps avec ceux qui le font. Écouter, c'est apprendre, faire, c'est comprendre.">
+                        Insight comes from working directly alongside teams. To truly understand a job, spend time with the people doing it. Listening is learning, doing is understanding.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-accent-red hover:shadow-lg transition">
+                    <i class="fas fa-handshake text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Customer Proximity" data-fr="Proximité Client">Customer Proximity</h3>
+                    <p class="lang-switch text-slate-600" data-en="Active listening and building trusted relationships. Visiting customers and spending time on their floor to talk to operators and maintenance teams brings invaluable advice." data-fr="Écoute active et établissement de relations de confiance. Rendre visite aux clients et passer du temps sur leurs installations pour parler aux opérateurs apporte des conseils inestimables.">
+                        Active listening and building trusted relationships. Visiting customers and spending time on their floor to talk to operators and maintenance teams brings invaluable advice.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-us-blue hover:shadow-lg transition">
+                    <i class="fas fa-users text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="People & Humility" data-fr="Humains & Humilité">People & Humility</h3>
+                    <p class="lang-switch text-slate-600" data-en="Lean, motivated teams with mutual respect outperform heavy structures. Empower people with tools and responsibility. Titles don't define value." data-fr="Des équipes agiles, motivées et se respectant mutuellement surpassent les structures lourdes. Donnez aux gens les outils et la responsabilité. Les titres ne définissent pas la valeur.">
+                        Lean, motivated teams with mutual respect outperform heavy structures. Empower people with tools and responsibility. Titles don't define value.
+                    </p>
+                </div>
+
+                <!-- Card 4: Long-Term Vision -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-accent-red hover:shadow-lg transition">
+                    <i class="fas fa-eye text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Long-Term Vision" data-fr="Vision à Long Terme">Long-Term Vision</h3>
+                    <p class="lang-switch text-slate-600" data-en="Sustainable value over short-term profit chasing. Acquiring new customers requires investment, while losing an existing one happens quickly. Beyond the financial impact, it also damages your reputation." data-fr="Valeur durable plutôt que recherche de profit à court terme. Acquérir de nouveaux clients nécessite des investissements, tandis que la perte d'un client existant se produit rapidement. Au-delà de l'impact financier, cela nuit également à votre réputation.">
+                        Sustainable value over short-term profit chasing. Acquiring new customers requires investment, while losing an existing one happens quickly. Beyond the financial impact, it also damages your reputation.
+                    </p>
+                </div>
+
+                <!-- Card 5: Organization -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-us-blue hover:shadow-lg transition">
+                    <i class="fas fa-sitemap text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Organization" data-fr="Organisation">Organization</h3>
+                    <p class="lang-switch text-slate-600" data-en="Team Dynamics: Having top-tier players isn't enough; if they don't mesh well together, the collective output falls far short of a cohesive, motivated team. Building a strong team takes time and intentional effort." data-fr="Dynamique d'équipe : Avoir des joueurs de haut niveau ne suffit pas ; s'ils ne s'entendent pas bien, le résultat collectif est bien inférieur à celui d'une équipe soudée et motivée. Bâtir une équipe solide demande du temps et des efforts intentionnels.">
+                        Team Dynamics: Having top-tier players isn't enough; if they don't mesh well together, the collective output falls far short of a cohesive, motivated team. Building a strong team takes time and intentional effort.
+                    </p>
+                </div>
+
+                <!-- Card 6: Diverse Cultures -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-accent-red hover:shadow-lg transition">
+                    <i class="fas fa-globe text-4xl text-slate-300 mb-4 block"></i>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Diverse Cultures" data-fr="Cultures Diverses">Diverse Cultures</h3>
+                    <p class="lang-switch text-slate-600" data-en="Perspective: Methods of working and thinking can vary significantly across cultures. Instead of judging differences, strive to understand them and incorporate valuable ideas. Embracing cultural diversity is a tremendous opportunity to broaden your horizons, both personally and professionally." data-fr="Perspective : Les méthodes de travail et de pensée peuvent varier considérablement d'une culture à l'autre. Au lieu de juger les différences, efforcez-vous de les comprendre et d'intégrer les idées précieuses. Accepter la diversité culturelle est une formidable opportunité d'élargir ses horizons, tant sur le plan personnel que professionnel.">
+                        Perspective: Methods of working and thinking can vary significantly across cultures. Instead of judging differences, strive to understand them and incorporate valuable ideas. Embracing cultural diversity is a tremendous opportunity to broaden your horizons, both personally and professionally.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Resilience & Ambition Section -->
+            <div class="mt-12 bg-white border border-slate-200 rounded-xl p-8 shadow-sm flex flex-col md:flex-row items-center gap-8">
+                <div class="w-16 h-16 bg-us-blue text-white rounded-full flex items-center justify-center text-3xl flex-shrink-0">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div>
+                    <h3 class="lang-switch text-2xl font-bold text-slate-800 mb-3" data-en="Resilience & Ambition" data-fr="Résilience & Ambition">Resilience & Ambition</h3>
+                    <p class="lang-switch text-slate-600 mb-3" data-en="Embracing Failure: Mistakes happen—it's completely normal. Taking action and trying is the only way to succeed. Having a clear goal and strong motivation is essential to stay on track." data-fr="Accepter l'échec : Les erreurs arrivent — c'est tout à fait normal. Agir et essayer est la seule façon de réussir. Avoir un objectif clair et une forte motivation est essentiel pour garder le cap.">
+                        Embracing Failure: Mistakes happen—it's completely normal. Taking action and trying is the only way to succeed. Having a clear goal and strong motivation is essential to stay on track.
+                    </p>
+                    <p class="text-us-blue font-bold text-lg">The Formula: risk + goal = success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Section -->
+    <section id="investor" class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="w-full md:w-1/2 p-12 text-white">
+                    <h2 class="lang-switch text-4xl font-extrabold mb-6 text-yellow-400"
+                        data-en="Investment Focus"
+                        data-fr="Objectif d'Investissement">
+                        Investment Focus
+                    </h2>
+                    <p class="lang-switch text-xl mb-6 leading-relaxed"
+                       data-en="Depending on the company and the opportunity, I am also open to investing alongside providing strategic and operational support."
+                       data-fr="En fonction de l'entreprise et de l'opportunité, je suis également ouvert à l'investissement, tout en apportant un soutien stratégique et opérationnel.">
+                       Depending on the company and the opportunity, I am also open to investing alongside providing strategic and operational support.
+                    </p>
+                    <p class="lang-switch text-lg text-slate-300"
+                       data-en="I am particularly interested in niche industrial products, especially businesses combining mechanical, electrical, automation, or other technical components."
+                       data-fr="Je suis particulièrement intéressé par les produits industriels de niche, en particulier les entreprises combinant des composants mécaniques, électriques, d'automatisation ou autres techniques.">
+                       I am particularly interested in niche industrial products, especially businesses combining mechanical, electrical, automation, or other technical components.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 p-12 bg-us-blue h-full flex flex-col justify-center border-l-4 border-accent-red">
+                    <div class="bg-white/10 rounded-xl p-8 relative">
+                        <h4 class="text-2xl font-bold text-white mb-4">Investment Philosophy</h4>
+                        <p class="text-slate-200 italic font-medium mb-4 text-lg">"Il faut se tromper pour apprendre."</p>
+                        <p class="lang-switch text-slate-300" data-en="Embracing calculated risks and learning from failure is essential. A sound investment isn't just about capital, but about navigating mistakes to build sustainable, long-term success." data-fr="Accepter les risques calculés et apprendre de ses échecs est essentiel. Un bon investissement ne concerne pas seulement le capital, mais la capacité à surmonter les erreurs pour bâtir un succès durable à long terme.">
+                            Embracing calculated risks and learning from failure is essential. A sound investment isn't just about capital, but about navigating mistakes to build sustainable, long-term success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Information Section -->
+    <section class="py-16 px-4 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="lang-switch text-3xl font-extrabold text-us-blue mb-10 text-center"
+                data-en="Useful Information"
+                data-fr="Informations Utiles">
+                Useful Information
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Book 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 border-l-4 border-us-blue hover:shadow-md transition">
+                    <i class="fas fa-book text-4xl text-slate-300 mt-1"></i>
+                    <div>
+                        <p class="lang-switch text-slate-600 mb-2" data-en="This book in French is a very good help to know the main practical information to work and live in the USA." data-fr="Ce livre en français est une très bonne aide pour connaître les principales informations pratiques pour travailler et vivre aux États-Unis.">
+                            This book in French is a very good help to know the main practical information to work and live in the USA.
+                        </p>
+                        <a href="http://www.joulin.com" target="_blank" class="text-xl font-bold text-accent-red hover:text-red-700 transition flex items-center w-fit">
+                            Réussir aux USA <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 border-l-4 border-us-blue hover:shadow-md transition">
+                    <i class="fas fa-globe-americas text-4xl text-slate-300 mt-1"></i>
+                    <div>
+                        <p class="lang-switch text-slate-600 mb-2" data-en="A good way to see the differences between different mentalities and way to manage and do business." data-fr="Un bon moyen de voir les différences entre les mentalités et la façon de gérer et de faire des affaires.">
+                            A good way to see the differences between different mentalities and way to manage and do business.
+                        </p>
+                        <a href="https://www.amazon.com/Culture-Map-Breaking-Invisible-Boundaries/dp/1610392507/ref=sr_1_2" target="_blank" class="text-xl font-bold text-accent-red hover:text-red-700 transition flex items-center w-fit">
+                            The Culture Map <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-slate-100 border-t-8 border-us-blue pt-16 pb-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="lang-switch text-4xl font-extrabold text-slate-800 mb-8"
+                data-en="Let's Connect"
+                data-fr="Contactez-moi">
+                Let's Connect
+            </h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+                <!-- Email -->
+                <a href="mailto:francoisjoulin@gmail.com" class="group flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition w-full md:w-auto">
+                    <div class="w-16 h-16 bg-blue-100 text-us-blue rounded-full flex items-center justify-center text-2xl group-hover:bg-us-blue group-hover:text-white transition mr-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="lang-switch text-sm text-slate-500 font-bold uppercase" data-en="Email" data-fr="E-mail">Email</p>
+                        <p class="text-xl font-semibold text-slate-800">francoisjoulin@gmail.com</p>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/francois-joulin" target="_blank" class="group flex items-center justify-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition w-full md:w-auto">
+                    <div class="w-16 h-16 bg-blue-100 text-us-blue rounded-full flex items-center justify-center text-2xl group-hover:bg-[#0077b5] group-hover:text-white transition mr-4">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-slate-500 font-bold uppercase">LinkedIn</p>
+                        <p class="text-xl font-semibold text-slate-800">/in/francois-joulin</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="inline-block bg-slate-200 px-6 py-3 rounded-full mb-12">
+                <p class="text-slate-600 font-medium flex items-center">
+                    <i class="fas fa-map-marker-alt text-accent-red mr-2 text-xl"></i>
+                    San Diego, California, USA
+                </p>
+            </div>
+
+            <div class="border-t border-slate-300 pt-8 mt-8">
+                <p class="text-slate-500 text-sm">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Francois Joulin. 
+                    <span class="lang-switch" data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // State for Language
+            let currentLang = 'en';
+
+            // DOM Elements
+            const langToggleBtns = [document.getElementById('langToggle'), document.getElementById('langToggleMob')];
+            const translatableElements = document.querySelectorAll('.lang-switch');
+            
+            // Mobile Menu Elements
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // --- Language Toggle Logic ---
+            function updateLanguage() {
+                // Toggle state
+                currentLang = currentLang === 'en' ? 'fr' : 'en';
+                
+                // Update button texts
+                langToggleBtns.forEach(btn => {
+                    if (btn) btn.innerText = currentLang === 'en' ? 'FR' : 'EN';
+                });
+
+                // Update all text/html content
+                translatableElements.forEach(el => {
+                    // Slight fade effect
+                    el.style.opacity = 0;
+                    setTimeout(() => {
+                        const newText = el.getAttribute(`data-${currentLang}`);
+                        if (newText) {
+                            // Check if element is an input/placeholder (not used here, but good practice)
+                            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                                el.placeholder = newText;
+                            } else {
+                                // Using innerHTML to preserve inline icons and formatting like <br> or <strong>
+                                el.innerHTML = newText;
+                            }
+                        }
+                        el.style.opacity = 1;
+                    }, 150);
+                });
+            }
+
+            // Event Listeners for Buttons
+            langToggleBtns.forEach(btn => {
+                if (btn) btn.addEventListener('click', updateLanguage);
+            });
+
+            // Set initial state based on button text (Buttons show the *opposite* language you switch to)
+            // Default is EN view, button says FR (meaning "Switch to FR")
+            langToggleBtns.forEach(btn => {
+                if (btn) btn.innerText = 'FR';
+            });
+
+            // --- Mobile Menu Logic ---
+            if(mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
